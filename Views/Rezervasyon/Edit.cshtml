@@ -1,0 +1,38 @@
+﻿@model KutuphaneOtomasyonSistemi.Models.Rezervasyon
+
+@{
+    ViewData["Title"] = "Yeni Rezervasyon Ekle";
+}
+
+<h1>Yeni Rezervasyon Ekle</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <input type="hidden" asp-for="RezervasyonID" />
+
+        <label asp-for="Kullanıcı" class="control-label"></label>
+        <input asp-for="Kullanıcı" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Kitap" class="control-label"></label>
+        <input asp-for="Kitap" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="RezervasyonTarihi" class="control-label"></label>
+        <input asp-for="RezervasyonTarihi" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="GeçerlilikSüresi" class="control-label"></label>
+        <input asp-for="GeçerlilikSüresi" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Durum" class="control-label"></label>
+        <input asp-for="Durum" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <select asp-for="KullanıcıID" asp-items="ViewBag.KullanıcıListesi" class="form-control"></select>
+        <select asp-for="KitapID" asp-items="ViewBag.KitapListesi" class="form-control"></select>
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>

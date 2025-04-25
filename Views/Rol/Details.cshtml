@@ -1,0 +1,42 @@
+﻿@model KutuphaneOtomasyonSistemi.Models.Rol
+
+@{
+    ViewData["Title"] = "Rol Detayları";
+}
+
+<h1>Rol Detayları</h1>
+
+<div>
+    <h4>@Model.RolAdı</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Durum</dt>
+        <dd class="col-sm-10">@Model.Durum</dd>
+
+        <dt class="col-sm-2">Kullanıcılar</dt>
+        <dd class="col-sm-10">
+            @if (Model.Kullanıcılar != null && Model.Kullanıcılar.Any())
+            {
+                <ul>
+                    @foreach (var kullanıcı in Model.Kullanıcılar)
+                    {
+                        <li>
+                            @kullanıcı.KullanıcıAdı
+                            |
+                            <a asp-controller="Kullanıcı" asp-action="Details" asp-route-id="@kullanıcı.KullanıcıID">Detay</a>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>Bu role ait kullanıcı yok.</p>
+            }
+        </dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.RolID">Düzenle</a> |
+    <a asp-action="Index">Geri Dön</a>
+</p>

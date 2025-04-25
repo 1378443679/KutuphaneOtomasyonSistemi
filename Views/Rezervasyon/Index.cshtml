@@ -1,0 +1,44 @@
+﻿@model IEnumerable<KutuphaneOtomasyonSistemi.Models.Rezervasyon>
+
+@{
+    ViewData["Title"] = "Rezervasyon Listesi";
+}
+
+<h1>Rezervasyonlar</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Rezervasyon Ekle</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Kullanıcı</th>
+            <th>Kitap</th>
+            <th>RezervasyonTarihi</th>
+            <th>GeçerlilikSüresi</th>
+            <th>Durum</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Kullanıcı?.KullanıcıAdı</td>
+                <td>@item.Kitap?.Başlık</td>
+                <td>@item.RezervasyonTarihi</td>
+                <td>@item.GeçerlilikSüresi</td>
+                <td>@item.Durum</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RezervasyonID">Düzenle</a> |
+                    <a asp-action="Details" asp-route-id="@item.RezervasyonID">Detay</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RezervasyonID">Sil</a>
+
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

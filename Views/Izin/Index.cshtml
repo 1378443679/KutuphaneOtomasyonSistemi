@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Izin>
+@{
+    ViewData["Title"] = "İzin Listesi";
+}
+
+<h1>İzin Listesi</h1>
+
+<a asp-action="Create" class="btn btn-primary">Yeni İzin Ekle</a>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Rol</th>
+            <th>Sayfa Adı</th>
+            <th>Erişim Türü</th>
+            <th>Durum</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var izin in Model)
+        {
+            <tr>
+                <td>@izin.Rol?.RolAdı</td>
+                <td>@izin.SayfaAdı</td>
+                <td>@izin.ErisimTuru</td>
+                <td>@izin.Durum</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@izin.IzinID">Düzenle</a> |
+                    <a asp-action="Details" asp-route-id="@izin.IzinID">Detay</a> |
+                    <a asp-action="Delete" asp-route-id="@izin.IzinID">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

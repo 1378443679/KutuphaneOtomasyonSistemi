@@ -1,0 +1,19 @@
+﻿@model KutuphaneOtomasyonSistemi.Models.Kategori
+
+@{
+    ViewData["Title"] = "Kategori Sil";
+}
+
+<h2>Kategori Sil</h2>
+
+<h4>Bu kategoriyi silmek istediğinize emin misiniz?</h4>
+<div>
+    <h5>@Model.KategoriAdı</h5>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="KategoriID" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>
+

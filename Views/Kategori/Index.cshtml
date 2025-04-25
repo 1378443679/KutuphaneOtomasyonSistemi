@@ -1,0 +1,36 @@
+﻿@model IEnumerable<KutuphaneOtomasyonSistemi.Models.Kategori>
+
+<h2>Kategoriler</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Kategori Adı</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kategori in Model)
+        {
+            <tr>
+                <td>@kategori.KategoriAdı</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@kategori.KategoriID">Düzenle</a> |
+                    <a asp-action="Details" asp-route-id="@kategori.KategoriID">Detay</a> |
+                    <a asp-action="Delete" asp-route-id="@kategori.KategoriID">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (TempData["SilmeMesaji"] != null)
+{
+    <div class="alert alert-success">@TempData["SilmeMesaji"]</div>
+}
+
+@if (TempData["Mesaj"] != null)
+{
+    <div class="alert alert-success">@TempData["Mesaj"]</div>
+}
+
+<a asp-action="Create" class="btn btn-primary">Yeni Kategori Ekle</a>

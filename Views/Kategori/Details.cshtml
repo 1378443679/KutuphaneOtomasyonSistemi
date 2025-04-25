@@ -1,0 +1,25 @@
+﻿@model KutuphaneOtomasyonSistemi.Models.Kategori
+
+@{
+    ViewData["Title"] = "Kategori Detay";
+}
+
+<h2>Kategori Detay</h2>
+
+<div>
+    <h4>Kategori Bilgisi</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Kategori ID</dt>
+        <dd class="col-sm-10">@Model.KategoriID</dd>
+
+        <dt class="col-sm-2">Kategori Adı</dt>
+        <dd class="col-sm-10">@Model.KategoriAdı</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.KategoriID" class="btn btn-warning">Düzenle</a>
+    <a asp-action="Delete" asp-route-id="@Model.KategoriID" class="btn btn-danger">Sil</a>
+    <a asp-action="Index" class="btn btn-secondary">Listeye Geri Dön</a>
+</div>

@@ -1,0 +1,30 @@
+﻿@model Izin
+
+<h2>İzin Güncelle</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="IzinID" />
+    <div class="form-group">
+        <label>Rol</label>
+        <select asp-for="RolID" class="form-control" asp-items="ViewBag.RolListesi"></select>
+    </div>
+    <div class="form-group">
+        <label>Sayfa Adı</label>
+        <input asp-for="SayfaAdı" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ErisimTuru" class="control-label"></label>
+        <select asp-for="ErisimTuru" class="form-control" asp-items="ViewBag.ErisimTurleri">
+            <option value="">-- Seçiniz --</option>
+        </select>
+        <span asp-validation-for="ErisimTuru" class="text-danger"></span>
+    </div>
+
+
+
+    <div class="form-group">
+        <label>Durum</label>
+        <input asp-for="Durum" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Güncelle</button>
+</form>

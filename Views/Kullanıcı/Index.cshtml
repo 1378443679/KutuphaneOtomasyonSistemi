@@ -1,0 +1,52 @@
+﻿@model IEnumerable<KutuphaneOtomasyonSistemi.Models.Kullanıcı>
+
+@{
+    ViewData["Title"] = "Kullanıcı Listesi";
+}
+
+<h1>Kullanıcılar</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Kullanıcı Ekle</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Email</th>
+            <th>KullanıcıAdı</th>
+            <th>Şifre</th>
+            <th>TelefonNumarası</th>
+            <th>Adres</th>
+            <th>Durum</th>
+            <th>Rol</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Ad</td>
+                <td>@item.Soyad</td>
+                <td>@item.Email</td>
+                <td>@item.KullanıcıAdı</td>
+                <td>@string.Join("", Enumerable.Repeat("*", item.Şifre?.Length ?? 0))</td>
+                <td>@item.TelefonNumarası</td>
+                <td>@item.Adres</td>
+                <td>@item.Durum</td>
+                <td>@item.Rol?.RolAdı</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.KullanıcıID">Düzenle</a> |
+                    <a asp-action="Details" asp-route-id="@item.KullanıcıID">Detay</a> |
+                    <a asp-action="Delete" asp-route-id="@item.KullanıcıID">Sil</a>
+
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

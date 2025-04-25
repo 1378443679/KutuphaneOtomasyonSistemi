@@ -1,0 +1,33 @@
+﻿@model KutuphaneOtomasyonSistemi.Models.Rezervasyon
+
+@{
+    ViewData["Title"] = "Rezervasyon Detayları";
+}
+
+<h1>Rezervasyon Detayları</h1>
+
+<div>
+    <h4>@Model.RezervasyonID</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Kullanıcı</dt>
+        <dd class="col-sm-10">@Model.Kullanıcı?.KullanıcıAdı</dd>
+
+        <dt class="col-sm-2">Kitap</dt>
+        <dd class="col-sm-10">@Model.Kitap?.Başlık</dd>
+
+        <dt class="col-sm-2">RezervasyonTarihi</dt>
+        <dd class="col-sm-10">@Model.RezervasyonTarihi</dd>
+
+        <dt class="col-sm-2">GeçerlilikSüresi</dt>
+        <dd class="col-sm-10">@Model.GeçerlilikSüresi</dd>
+
+        <dt class="col-sm-2">Durum</dt>
+        <dd class="col-sm-10">@Model.Durum</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.RezervasyonID">Düzenle</a> |
+    <a asp-action="Index">Geri Dön</a>
+</p>

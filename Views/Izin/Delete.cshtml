@@ -1,0 +1,18 @@
+﻿@model Izin
+
+<h2>İzin Sil</h2>
+
+<h4>Bu izni silmek istediğinizden emin misiniz?</h4>
+
+<table class="table">
+    <tr><th>Rol</th><td>@Model.Rol?.RolAdı</td></tr>
+    <tr><th>Sayfa Adı</th><td>@Model.SayfaAdı</td></tr>
+    <tr><th>Erişim Türü</th><td>@Model.ErisimTuru</td></tr>
+</table>
+
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IzinID" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">Vazgeç</a>
+</form>

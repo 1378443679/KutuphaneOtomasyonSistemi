@@ -1,0 +1,48 @@
+﻿@model KutuphaneOtomasyonSistemi.Models.Kullanıcı
+
+@{
+    ViewData["Title"] = "Yeni Kullanıcı Ekle";
+}
+
+<h1>Yeni Kullanıcı Ekle</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Ad" class="control-label"></label>
+        <input asp-for="Ad" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Soyad" class="control-label"></label>
+        <input asp-for="Soyad" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="KullanıcıAdı" class="control-label"></label>
+        <input asp-for="KullanıcıAdı" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Şifre" class="control-label"></label>
+        <input asp-for="Şifre" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="TelefonNumarası" class="control-label"></label>
+        <input asp-for="TelefonNumarası" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Adres" class="control-label"></label>
+        <input asp-for="Adres" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Durum" class="control-label"></label>
+        <input asp-for="Durum" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="RolID" class="control-label"></label>
+        <select asp-for="RolID" class="form-control"
+                asp-items="ViewBag.RolListesi"></select>
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>

@@ -1,0 +1,36 @@
+﻿@model KutuphaneOtomasyonSistemi.Models.Kitap
+
+@{
+    ViewData["Title"] = "Kitap Detayları";
+}
+
+<h1>Kitap Detayları</h1>
+
+<div>
+    <h4>@Model.Başlık</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Yazar</dt>
+        <dd class="col-sm-10">@Model.Yazar</dd>
+
+        <dt class="col-sm-2">Yayıncı</dt>
+        <dd class="col-sm-10">@Model.Yayıncı</dd>
+
+        <dt class="col-sm-2">ISBN</dt>
+        <dd class="col-sm-10">@Model.ISBN</dd>
+
+        <dt class="col-sm-2">Yayın Yılı</dt>
+        <dd class="col-sm-10">@Model.YayınYılı</dd>
+
+        <dt class="col-sm-2">Sayfa Sayısı</dt>
+        <dd class="col-sm-10">@Model.SayfaSayısı</dd>
+
+        <dt class="col-sm-2">Kategori</dt>
+        <dd class="col-sm-10">@Model.Kategori.KategoriAdı</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.KitapID">Düzenle</a> |
+    <a asp-action="Index">Geri Dön</a>
+</p>

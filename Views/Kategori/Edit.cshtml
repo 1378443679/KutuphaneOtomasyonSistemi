@@ -1,0 +1,18 @@
+﻿@model KutuphaneOtomasyonSistemi.Models.Kategori
+
+@{
+    ViewData["Title"] = "Yeni Kategori Ekle";
+}
+
+<h1>Yeni Kategori Ekle</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <input type="hidden" asp-for="KategoriID" />
+
+        <label asp-for="KategoriAdı" class="control-label"></label>
+        <input asp-for="KategoriAdı" class="form-control" />
+    </div>
+    
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>

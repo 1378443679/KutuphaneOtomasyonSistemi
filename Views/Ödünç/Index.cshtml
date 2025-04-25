@@ -1,0 +1,40 @@
+﻿@model IEnumerable<KutuphaneOtomasyonSistemi.Models.Ödünç>
+
+@{
+    ViewData["Title"] = "Ödünç Listesi";
+}
+
+<h1>Ödünçler</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Ödünç Ekle</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Kitap</th>
+            <th>Durum</th>
+            <th>İadeTarihi</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Kitap?.Başlık</td>
+                <td>@item.Durum</td>
+                <td>@item.İadeTarihi</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ÖdünçID">Düzenle</a> |
+                    <a asp-action="Details" asp-route-id="@item.ÖdünçID">Detay</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ÖdünçID">Sil</a>
+
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

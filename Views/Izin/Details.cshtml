@@ -1,0 +1,15 @@
+﻿@model Izin
+
+<h2>İzin Detayı</h2>
+
+<table class="table">
+    <tr><th>Rol</th><td>@Model.Rol?.RolAdı</td></tr>
+    <tr><th>Sayfa Adı</th><td>@Model.SayfaAdı</td></tr>
+    <tr><th>Erişim Türü</th><td>@Model.ErisimTuru</td></tr>
+    <tr><th>Durum</th><td>@Model.Durum</td></tr>
+    <tr><th>Oluşturma Zamanı</th><td>@Model.OluşturmaZamanı</td></tr>
+    <tr><th>Güncellenme Zamanı</th><td>@Model.GüncellenmeZamanı</td></tr>
+</table>
+
+<a asp-action="Edit" asp-route-id="@Model.IzinID" class="btn btn-primary">Düzenle</a>
+<a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
