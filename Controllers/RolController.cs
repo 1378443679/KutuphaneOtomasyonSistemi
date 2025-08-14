@@ -60,7 +60,7 @@ namespace KutuphaneOtomasyonSistemi.Controllers
             {
                 // Loglama yapabilirsin
                 ModelState.AddModelError("", "Kullanıcı bilgisi geçerli değil.");
-                ViewBag.KategoriListesi = new SelectList(_context.Kullanıcılar.ToList(), "KullanıcıID", "KullanıcıAdı");
+                ViewBag.KullanıcıListesi = new SelectList(_context.Kullanıcılar.ToList(), "KullanıcıID", "KullanıcıAdı");
                 return View(rol);
             }
 
@@ -144,3 +144,4 @@ namespace KutuphaneOtomasyonSistemi.Controllers
     }
 
 }
+
