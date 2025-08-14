@@ -80,7 +80,7 @@ namespace KutuphaneOtomasyonSistemi.Controllers
         public IActionResult Create()
         {
             ViewBag.KullanıcıListesi = new SelectList(_context.Kullanıcılar.ToList(), "KullanıcıID", "KullanıcıAdı");
-            ViewBag.KitapListesi = new SelectList(_context.Kitaplar.ToList(), "KitapID");
+            ViewBag.KitapListesi = new SelectList(_context.Kitaplar.ToList(), "KitapID", "Başlık");
             return View();
         }
 
@@ -159,3 +159,4 @@ namespace KutuphaneOtomasyonSistemi.Controllers
 
     }
 }
+
