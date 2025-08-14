@@ -100,7 +100,7 @@ namespace KutuphaneOtomasyonSistemi.Controllers
             return View(üye);
         }
 
-        // GET: Kitaplar/Delete/5
+        // GET: Üyeler/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Üyeler == null)
@@ -137,3 +137,4 @@ namespace KutuphaneOtomasyonSistemi.Controllers
 
     }
 }
+
